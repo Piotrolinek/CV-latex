@@ -1,0 +1,135 @@
+% author Piotr Sokolinski
+% use free
+
+\documentclass{article}
+
+% used for adjusting margins (top, bottom, left, right in that order)
+\usepackage[a4paper,vmargin={1cm,1cm},hmargin={1cm,1cm}]{geometry}
+% for debugging
+\usepackage{lipsum}
+\usepackage{layout}
+\usepackage{framed}
+
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{qrcode}
+\usepackage{background}
+
+% background setup
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgColor{black}
+\SetBgContents{\hspace{0.551\paperwidth}\rule{0.4pt}{\textheight}}
+\SetBgHshift{-9cm}
+\pagestyle{empty}
+
+% replace with anything you want
+\newcommand{\imagewidth}{5.5cm}
+\newcommand{\imageheight}{5.5cm}
+\newcommand{\github}{https://github.com/Piotrolinek}
+\newcommand{\linkedin}{https://www.linkedin.com/in/piotr-sokoliński-0a0a18357/}
+
+\newcommand{\divider}[4][black]{\color{#1}{\rule[#2]{#3}{#4}}}
+\newcommand{\doublecell}[2]{\begin{tabular}{@{}c@{}}#1 \\ #2\end{tabular}}
+
+% width, text, since, to
+\newcommand{\entry}[3][0.79\linewidth]{\parbox{#1}{#2} & #3 \\\\}
+
+\begin{document}
+    \begin{minipage}[t][\textheight]{0.3\textwidth}
+        \begin{center}
+            %source: https://en.m.wikipedia.org/wiki/File:Portrait_Placeholder.png
+            \includegraphics[width=\imagewidth, height=\imageheight]{Portrait_Placeholder.png}
+            \divider[gray]{7pt}{5.5cm}{0.4pt}
+        \end{center}
+        \vspace{-10pt}
+        
+        \hspace{5px}\textbf{Contact}
+        \begin{itemize}
+            \item Email address
+            \item Phone number
+            \item LinkedIn profile
+            \item Address
+        \end{itemize}
+        
+        \hspace{5px}\textbf{Skills}
+        \begin{itemize}
+            \item Skill 1
+            \item Skill 2
+            \item Skill 3
+            \item Skill 4
+            \item Skill 5
+            \item Skill 6
+            \item Skill 7
+            \item Skill 8
+        \end{itemize}
+
+        \hspace{5px}\textbf{Languages}
+        \begin{enumerate}
+            \item language (native)
+            \item language (certified C1)
+            \item language
+        \end{enumerate}
+
+        \begin{center}
+            \vfill
+            \begin{table}[H]
+                \begin{tabular}{ll}
+                    \doublecell{LinkedIn}{\qrcode[height=2.2cm]{\linkedin}} &
+                    \doublecell{Github}{\qrcode[height=2.2cm]{\github}}
+                \end{tabular}
+            \end{table}
+        \end{center}
+    \end{minipage}
+    \begin{minipage}[t]{0.65\textwidth}
+        \vspace{-\imageheight}
+        \begin{center}
+            \vspace{55.5px}
+            {\Huge \textbf{Firstname Lastname}}\\
+            \vspace{10px}
+            {\huge Role/position}
+            \divider[gray]{-50pt}{12.15cm}{0.4pt}
+        \end{center}
+        \hspace{20px}
+        \begin{minipage}[t][0.5\textheight]{0.92\textwidth}
+            \textbf{Summary}\\\vspace{-2px}\\
+            \parbox[500pt]{\linewidth}{\lipsum[1][1-12]}\\\vspace{6px}\\
+            \textbf{Work experience}
+
+            \begin{table}[H]
+                \hspace{-8px}
+                \begin{tabular}{c|r}
+                    \arrayrulecolor{gray}
+                    \entry{\lipsum[2][1-3]}{2014-now}
+                    \entry{\lipsum[3][1-3]}{2007-2014}
+                    \entry{\lipsum[4][1-3]}{\doublecell{15.01.2006}{18.06.2006}}
+                    \entry{\lipsum[5][1-3]}{2002-2005}
+                \end{tabular}\vspace{-10px}
+            \end{table}
+            \textbf{Education}\vspace{3px}
+            \begin{table}[H]
+                \hspace{-8px}
+                \begin{tabular}{c|r}
+                    \arrayrulecolor{gray}
+                    \entry{\lipsum[6][1-3]}{1999-2002}
+                    \entry{\lipsum[7][1-3]}{1996-1999}
+                \end{tabular}\vspace{-10px}
+            \end{table}
+            \textbf{Achievements}
+            \begin{itemize}[leftmargin=13px]
+                \item Achievement 1
+                \item Achievement 2
+                \item Achievement 3
+            \end{itemize}
+            \textbf{Reference}
+            \begin{itemize}[leftmargin=13px]
+                \item Reference 1
+                \item Reference 2
+                \item Reference 3
+            \end{itemize}
+        \end{minipage}
+    \end{minipage}
+\end{document}
