@@ -17,6 +17,7 @@
 \usepackage{float}
 \usepackage{qrcode}
 \usepackage{background}
+\usepackage{svg}
 
 % background setup
 \SetBgScale{1}
@@ -25,6 +26,10 @@
 \SetBgContents{\hspace{0.551\paperwidth}\rule{0.4pt}{\textheight}}
 \SetBgHshift{-9cm}
 \pagestyle{empty}
+
+% uncomment those lines if you want the file to be less of an eyesore during development
+% \pagecolor[rgb]{0.1,0.1,0.1}
+% \color[rgb]{0.8,0.8,0.8}
 
 % replace with anything you want
 \newcommand{\imagewidth}{5.5cm}
@@ -41,7 +46,7 @@
 \begin{document}
     \begin{minipage}[t][\textheight]{0.3\textwidth}
         \begin{center}
-            %source: https://en.m.wikipedia.org/wiki/File:Portrait_Placeholder.png
+            % source: https://en.m.wikipedia.org/wiki/File:Portrait_Placeholder.png
             \includegraphics[width=\imagewidth, height=\imageheight]{Portrait_Placeholder.png}
             \divider[gray]{7pt}{5.5cm}{0.4pt}
         \end{center}
@@ -49,10 +54,16 @@
         
         \hspace{5px}\textbf{Contact}
         \begin{itemize}
-            \item Email address
-            \item Phone number
-            \item LinkedIn profile
-            \item Address
+            % source https://uxwing.com/mail-icon/
+            \item[\raisebox{-0.2\height}{\includegraphics[scale=.4]{./icons/mail-icon.png}}] Email address
+            % source https://uxwing.com/phone-call-icon/
+            \item[\raisebox{-0.2\height}{\includegraphics[scale=.4]{./icons/phone-call-icon.png}}] Phone number
+            % source https://uxwing.com/linkedin-square-icon/
+            \item[\raisebox{-0.2\height}{\includegraphics[scale=.4]{./icons/linkedin-square-icon.png}}] LinkedIn profile
+            % source https://uxwing.com/world-globe-line-icon/
+            \item[\raisebox{-0.2\height}{\includegraphics[scale=.4]{./icons/world-globe-line-icon.png}}] \href{\github}{Portfolio} %{\color{blue}{\href{\github}{Portfolio}}}
+            % source https://uxwing.com/maps-pin-black-icon/
+            \item[\raisebox{-0.2\height}{\includegraphics[scale=.4]{./icons/maps-pin-black-icon.png}}] Address
         \end{itemize}
         
         \hspace{5px}\textbf{Skills}
